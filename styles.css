@@ -13,6 +13,7 @@ html {
 .father {
   display: flex;
   flex-direction: column;
+  background-color: var(--blue2);
 }
 
 input[type="submit"],
@@ -84,12 +85,29 @@ ul {
 }
 
 .main-container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 90vh;
+  min-height: 92.2vh;
   flex-direction: column;
-  background-color: var(--blue2);
+  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.601);
+}
+
+.main-container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(assets/acd72b168511603.643c2b2d8021e.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  z-index: -1;
 }
 
 form {
@@ -103,6 +121,7 @@ form {
   gap: 1rem;
   justify-content: center;
   border-radius: 0.3rem;
+  z-index: 2;
 }
 
 .input-control {
@@ -137,28 +156,31 @@ form {
 }
 
 #botaoEnviar {
-  padding: 0.2rem 0.8rem;
-  border-radius: 0.15rem;
+  padding: 0.45rem 1.3rem;
+  border-radius: 0.35rem;
   outline: none;
-  border: 1px solid rgb(23, 20, 29);
+  border: 1px solid aliceblue;
   transition: all 0.4s;
   font-size: 15px;
+  background-color: transparent;
+  color: aliceblue;
 }
 
 #botaoEnviar:hover {
-  background-color: rgb(23, 20, 29);
-  color: white;
+  background-color: aliceblue;
+  color: var(--blue2);
 }
 
 .cards {
   display: grid;
   justify-content: center;
-  margin-top: 1rem;
   min-width: 15rem;
   grid-template-columns: auto auto auto;
+  background-color: var(--blue2);
 }
 
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -167,8 +189,23 @@ form {
   gap: 1rem;
   min-width: 15rem;
   min-height: 20rem;
-  border: 1px solid rgb(22, 24, 38);
+  border: 1px solid aliceblue;
   border-radius: 0.4rem;
-  background-color: rgba(0, 0, 0, 0.601);
   color: aliceblue;
+  z-index: 0;
+}
+
+.card::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(assets/Opera\ Instantâneo_2023-05-14_002947_www.google.com.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5; 
+  z-index: -1;
 }
